@@ -4,7 +4,8 @@ We began with the main java dataset of 2.1m methods aswell the complete 50 milli
 
 The dataset was filtered for duplicates then project context was constructed from the extended set using the scripts in the "builder" folder.
 
-Due to cloud memory constraint, we provide the compiled dataset as well as the scripts used to compile, the intermediary data files can be made available on request for modification purposes. This data can be found at :
+We provide the compiled dataset as well as the scripts used to compile .This data can be found at :
+https://projcon.s3.us-east-2.amazonaws.com/projcondata.zip
 
 
 ## Step 1 - Training
