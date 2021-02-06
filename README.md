@@ -23,7 +23,7 @@ time python3 train.py --model-type=attendgru-pc --batch-size=50 --epochs=10 --da
 ```
 Note: --datfile=dataset_3Drandom.pkl for code2seq and graph2seq models or any custom models that use ast graphs you might wanna test. This is true for --datfile arg for all scripts in this project.
 
-Scripts for firstwords versions for RQ2 table can be found in the firstwords folder and largely follow the same pattern as these scripts {predicts are provided as well}
+Scripts for Actionwords from S.Haque et al {https://github.com/actionwords/actionwords} for RQ2 table can be found in the firstwords folder and largely follow the same pattern as these scripts (predicts are provided as well)
 
 ## Step 2 - Predictions
 Training print screen will display the epoch at which the model converges, that is when the validation accuracy is not increase much or just before it starts to decrease and validation loss goes up. Once epoch is identified run the following script and replace file in this example with the trained model epoch and timestamp.
