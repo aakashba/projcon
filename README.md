@@ -1,6 +1,6 @@
 # Guide for replication of results for paper "Project-Level Encoding for Neural Source Code Summarization of Subroutines", currently under peer review
 ## Step 0 - Dataset building
-We began with the main java dataset of 2.1m methods aswell the complete 50 million method extended set requested from Le Clair et al{}
+We began with the main java dataset of 2.1m methods aswell the complete 50 million method extended set requested from Le Clair et al{http://leclair.tech/data/funcom/}
 
 The dataset was filtered for duplicates then project context was constructed from the extended set using the scripts in the "builder" folder.
 
