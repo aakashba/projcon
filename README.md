@@ -12,9 +12,9 @@ To ensure no recursive errors or edits, create directories nfs>projects and clon
 Download and unpack all data from the aws link into this directory as well.
 Create directory outdir, with 4 subdirectories  **outdir/{models, histories, viz, predictions}**
 **Use Requirements.txt to get your python 3.x virtual environment in sync with our setup.** Venv is preferred. Common issues that might arise from updating an existing venv and solutions :
--GPU not recognized - checking the compatibility of your gpu cudnn/cuda or other drivers with the keras and tf versions fixes this.
--Tf unable to allocate tensor- uninstall tensorflow and then update tensorflow-gpu only. Note we have not tested our setup with tf 2.x
--keras "learning rate" error -clean uninstall keras and install keras 2.3.1 {pip --upgrade is broken for this dependency so will not work}
+- GPU not recognized: checking the compatibility of your gpu cudnn/cuda or other drivers with the keras and tf versions fixes this.
+- Tf unable to allocate tensor: uninstall tensorflow and then update tensorflow-gpu only. Note we have not tested our setup with tf 2.x
+- keras "learning rate" error: clean uninstall keras and install keras 2.3.1 {pip upgrade is broken for this dependency so will not work}
 To train the most basic project-level context model use the following command :
 ```
 time python3 train.py --model-type=attendgru-pc --batch-size=50 --epochs=10 --datfile=dataset_random.pkl --gpu=0
