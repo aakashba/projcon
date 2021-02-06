@@ -11,7 +11,7 @@ import gc
 # instead, import keras as needed in each function
 
 # TODO refactor this so it imports in the necessary functions
-dataprep = '/nfs/projects/attn-to-fc/data/standard'
+dataprep = '/nfs/projects/projcon/'
 sys.path.append(dataprep)
 import tokenizer
 
