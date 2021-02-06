@@ -1,0 +1,202 @@
+loading tokenizers... done, 0.13 seconds.
+loading firstwords...done, 0.33 seconds.
+loading sequences... done, 59.97 seconds.
+no
+False
+loading config... done, 0.02 seconds.
+loading model... __________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_2 (InputLayer)            (None, 100)          0                                            
+__________________________________________________________________________________________________
+embedding_2 (Embedding)         (None, 100, 100)     13200       input_2[0][0]                    
+__________________________________________________________________________________________________
+input_1 (InputLayer)            (None, 25)           0                                            
+__________________________________________________________________________________________________
+cu_dnngru_1 (CuDNNGRU)          [(None, 100, 100), ( 60600       embedding_2[0][0]                
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         (None, 25, 100)      7500000     input_1[0][0]                    
+__________________________________________________________________________________________________
+cu_dnngru_2 (CuDNNGRU)          [(None, 25, 100), (N 60600       embedding_1[0][0]                
+                                                                 cu_dnngru_1[0][1]                
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 125, 100)     0           cu_dnngru_1[0][0]                
+                                                                 cu_dnngru_2[0][0]                
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 12500)        0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 41)           512541      flatten_1[0][0]                  
+==================================================================================================
+Total params: 8,146,941
+Trainable params: 8,146,941
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+done, 3.39 seconds.
+computing predictions...
+1000 processed, 1080.5443542584994 per second this batch
+2000 processed, 15031.484420938757 per second this batch
+3000 processed, 14494.33938780234 per second this batch
+4000 processed, 15026.81806157806 per second this batch
+5000 processed, 14608.204806562477 per second this batch
+6000 processed, 14625.557714717605 per second this batch
+7000 processed, 13087.911264589415 per second this batch
+8000 processed, 12990.744198928756 per second this batch
+9000 processed, 13145.946109540453 per second this batch
+10000 processed, 13049.836424865782 per second this batch
+11000 processed, 12919.68364946229 per second this batch
+12000 processed, 13317.34133698981 per second this batch
+13000 processed, 13006.898169337575 per second this batch
+14000 processed, 13388.760660088246 per second this batch
+15000 processed, 13314.326511087495 per second this batch
+16000 processed, 13115.861679211783 per second this batch
+17000 processed, 12898.68563559311 per second this batch
+18000 processed, 13307.96657456708 per second this batch
+19000 processed, 12995.527082477625 per second this batch
+20000 processed, 13294.64997879121 per second this batch
+21000 processed, 12920.221482606765 per second this batch
+22000 processed, 13410.64282851831 per second this batch
+23000 processed, 13052.111835634052 per second this batch
+24000 processed, 13253.796066064093 per second this batch
+25000 processed, 13196.090125197552 per second this batch
+26000 processed, 13011.503340070754 per second this batch
+27000 processed, 12982.072549712313 per second this batch
+28000 processed, 13169.800409476844 per second this batch
+29000 processed, 12774.11347356139 per second this batch
+30000 processed, 13011.078581992302 per second this batch
+31000 processed, 12987.310345781987 per second this batch
+32000 processed, 12799.976243420824 per second this batch
+33000 processed, 13093.236030421625 per second this batch
+34000 processed, 13148.658496084443 per second this batch
+35000 processed, 13038.863807094354 per second this batch
+36000 processed, 13296.696148649824 per second this batch
+37000 processed, 12850.2269935985 per second this batch
+38000 processed, 13002.393636595181 per second this batch
+39000 processed, 13052.777967864671 per second this batch
+40000 processed, 12992.209871056017 per second this batch
+41000 processed, 13093.623651245576 per second this batch
+42000 processed, 12776.144219712587 per second this batch
+43000 processed, 13168.882609926664 per second this batch
+44000 processed, 13804.738843939243 per second this batch
+45000 processed, 12841.430523204861 per second this batch
+46000 processed, 13356.985705434514 per second this batch
+47000 processed, 12894.533393533078 per second this batch
+48000 processed, 12999.11296658207 per second this batch
+49000 processed, 12931.398233826822 per second this batch
+50000 processed, 12987.585790034416 per second this batch
+51000 processed, 13117.75595695802 per second this batch
+52000 processed, 12905.848940985887 per second this batch
+53000 processed, 13110.372912581313 per second this batch
+54000 processed, 12741.424187144235 per second this batch
+55000 processed, 13040.100591217639 per second this batch
+56000 processed, 13007.459700146988 per second this batch
+57000 processed, 12792.014344495752 per second this batch
+58000 processed, 13303.11380244092 per second this batch
+59000 processed, 12962.626246539488 per second this batch
+60000 processed, 13112.190299857095 per second this batch
+61000 processed, 12747.182041094962 per second this batch
+62000 processed, 13202.486656787945 per second this batch
+63000 processed, 12727.87834293957 per second this batch
+64000 processed, 12894.643464439503 per second this batch
+65000 processed, 13232.451242226362 per second this batch
+66000 processed, 12624.10505212624 per second this batch
+67000 processed, 12926.559998427967 per second this batch
+68000 processed, 13105.72464077407 per second this batch
+69000 processed, 12948.359946560598 per second this batch
+70000 processed, 13014.92526887257 per second this batch
+71000 processed, 13020.621917796838 per second this batch
+72000 processed, 13091.232801537135 per second this batch
+73000 processed, 13084.568299568149 per second this batch
+74000 processed, 15023.967133901224 per second this batch
+done, 6.47 seconds.
+          return     set     get     add   creat   initi    test   remov   check      is    call retriev   updat    auto   writedetermin    read   handl      to      if  insert descrpt     use    load   delet convert   start   clear   print    find   reset    save    send   gener   close  compar   indic perform   chang    show   other
+  return    6640      34    2529      12      68      17       4       7     437       5       0       6       1       0       0       9      14       0       0       0       1       0       0       1       4      31       0       0       0      42       1       3       0       3       1      22       0       0       0       1    1128
+     set      17   10390      13      40      11      21       2       3       2       0       0       0      25       0       1       0       0       3       0       0       0       0       0       1       0       0       3       5       0       0      12       0       2       0       2       0       0       2       8      10     466
+     get    4616      19    3451       7      12      15       3       3      45       0       0      11       5       0       2       2       4       1       0       0       1       0       0       1       2       4       2       1       1       8       0       1       0       1       0       1       0       0       0       0     479
+     add       2      46       3    2962      15       1      10       2       1       0       0       0       2       0       3       0       0       0       0       0       8       0       0       4       1       0       0       0       3       0       0       2       3       0       0       0       0       0       0       1     254
+   creat      77      23      32      44    1032      20      15       0       2       0       0       0       0       0       1       0       1       0       0       0       1       0       0       5       0       6       6       1       2       1       0       0       2       8       1       0       0       0       0       1     422
+   initi      16      17      13       2      18    1627       0       0       0       0       0       0       2       0       0       0       1       0       0       0       1       0       0       2       0       0       5       0       1       0       0       0      13       0       0       0       0       0       0       1     178
+    test      59       2       1       1       1       2    1167       0      95       1       0       0       1       0       0       0       1       0       0       0       0       0       0       0       0       0       1       0       0       2       0       0       0       0       0       6       0       0       0       0     166
+   remov       6       1       0       1       0       1       4    1209       0       0       0       0       2       0       0       0       0       0       0       0       0       0       0       1      37       0       0      62       0       0       4       3       0       0       5       0       0       0       0       0     165
+   check     321       9      13       2       3       2      65       2     728       3       0       0       3       0       0       7       0       1       0       0       0       0       0       2       0       0       0       0       1       1       0       2       0       0       0      20       0       0       1       4     276
+      is     133      39      14      15      13       7       3       9      67      39       2       0       7       0       1       0       0       1       0       0       2       0       0       0       2       1       5       3       3       1       1       2       5       1       1       2       0       1       0       0     254
+    call       4      32       8      15       9       8       1       9       4       1      22       0      17       0       1       0       0       1       0       0       1       0       0       0       3       1      11       1       3       4       3       5       1       0       5       0       0       1       3       0     574
+ retriev     236       0     115       0       0      10       0       1       3       0       0      35       0       0       0       0       1       0       0       0       0       0       0       1       0       0       0       0       0      15       0       0       0       0       0       0       0       0       0       0      53
+   updat       0      25       0       2       1       0       0       1       4       0       1       0     359       0       0       0       0       2       0       0       0       0       0       1       0       0       0       0       0       0       4       1       5       0       0       0       0       0       4       0     131
+    auto       2       1       4       1       0       0       0       0       0       0       0       0       0       8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       3
+   write       4      21       1       0       3       0       4       0       0       0       0       0       1       0     329       0       0       0       0       0       0       0       0       1       0       0       2       0       7       0       0      12       2       1       5       0       0       0       0       0     105
+determin     150      21      11       0       0       1       3       0     111       0       0       0       1       0       0       3       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0       0       0       1       0       7       0       0       0       0      78
+    read      27       3       8       5       0       4       1       0       2       0       0       0       1       0       0       0     218       0       0       0       0       0       0      16       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0      94
+   handl       1       4       1       1       0       0       2       3       0       0       0       0       3       0       0       0       0      51       0       0       2       0       0       1       1       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0     169
+      to      70      66      29      20       4       3       0       3       6       0       0       0      11       0      10       0       0       0       0       0       1       0       0       3       0       4       3       0       0       1       2       1       0       1       5       3       0       0       2       2     109
+      if      41      37      12       2       1       1       3       3      18       0       0       0       6       0       3       0       1       0       0       0       0       0       0       0       2       0       0       0       0       0       0       0       1       1       0       1       0       0       0       0     112
+  insert       6       4       1      28       3       0       0       0       2       0       0       0       0       0       0       0       0       0       0       0     101       0       0       0       0       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0      37
+ descrpt       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+     use      70      52      21      11       6       1       4       9       9       0       1       0       1       0       1       0       0       1       0       0       2       0       0       1       1       0       2       0       4       3       1       1       1       3       1       1       0       0       5       1     128
+    load      12       3      10       4       1       7       0       0       0       0       0       0       0       0       0       0       4       0       0       0       0       0       0     218       0       0       0       0       0       1       0       0       0       0       0       0       0       0       0       0      73
+   delet       0       1       0       0       0       0       0      21       0       0       0       0       2       0       0       0       0       0       0       0       0       0       0       0     230       0       0       5       0       0       3       0       0       0       0       0       0       0       0       0      27
+ convert      71       4      21       0       0       0      10       0       0       0       0       0       1       0       1       0       0       0       0       0       0       0       0       0       0     120       0       0       0       0       0       0       1       0       0       0       0       0       0       0     111
+   start       3       4       3       0       6       1       3       0       0       0       1       0       3       0       0       0       0       0       0       0       0       0       0       0       0       0     139       0       0       0       2       0       0       0       0       0       0       1       0       0     134
+   clear       0       3       0       0       0       0       0      22       0       0       0       0       1       0       0       0       2       0       0       0       0       0       0       1       3       0       0     215       0       0      17       0       1       0       0       0       0       0       0       0      41
+   print      24       2       0       0       3       0       2       0       0       0       0       0       0       0      19       0       0       0       0       0       0       0       0       0       0       0       0       0     203       0       0       0       1       2       0       0       0       0       0       0     144
+    find     101       4      23       2       2       0       0       1       5       0       0       0       2       0       0       0       0       0       0       0       0       0       0       0       1       0       0       0       0     183       0       0       0       0       0       0       0       0       0       0      64
+   reset       1      11       0       0       0       3       0       1       0       0       0       0       3       0       0       0       0       0       0       0       0       0       0       2       1       0       0      17       0       0     209       0       0       0       0       0       0       0       0       0      39
+    save       0      10       0       1       1       0       0       0       0       0       0       0       2       0       1       0       0       0       0       0       0       0       0       0       0       0       1       0       0       0       0     176       0       0       1       0       0       1       0       0      28
+    send       1       3       0       0       0       0       0       0       0       0       1       0       5       0       5       0       0       1       0       0       1       0       0       0       1       0       2       0       1       0       0       0     167       1       1       0       0       0       0       0      83
+   gener      24       3       4       5      11       0       0       0       2       0       0       1       1       0       0       0       0       0       0       0       0       0       0       1       1       0       0       0       0       0       0       0       0      71       0       0       0       0       0       0      88
+   close       2       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       1       0       0       1       0       0       0       0       0       0     268       0       0       0       0       0      43
+  compar       5       0       0       0       0       0       4       0      16       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0     157       0       0       0       0      28
+   indic      82      18       4       1       0       0       2       0      32       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0       0       0       3       0       0       0       0      42
+ perform       7       1       1       2       1       2       3       0       6       0       0       0       0       0       0       0       1       0       0       0       1       0       0       1       4       5       1       1       0       1       1       3       1       0       0       2       0      17       0       1     179
+   chang       2     192       0       0       1       0       1       2       1       0       0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0       0       0       0       0       0      76       0      67
+    show       9      14       1       0       0       1       0       0       0       0       0       0       5       0       1       0       0       0       0       0       0       0       0       2       0       0       2       0       0       0       0       5       0       0       0       0       0       0       0      81     150
+   other    2330    1623     867     410     648     199     643     167     428       3      33      13     119       0      83      12      59      33       0       0      25       0       0      70      51      51      47      33      36     116      57      55      60      21      82      79       0      10      16      50   12951
+
+              precision    recall  f1-score   support
+
+      return       0.44      0.60      0.51     11021
+         set       0.82      0.94      0.87     11039
+         get       0.48      0.40      0.43      8698
+         add       0.82      0.89      0.86      3323
+       creat       0.55      0.61      0.58      1703
+       initi       0.83      0.86      0.84      1897
+        test       0.60      0.77      0.67      1506
+       remov       0.82      0.81      0.81      1501
+       check       0.36      0.50      0.42      1466
+          is       0.75      0.06      0.11       634
+        call       0.35      0.03      0.05       748
+     retriev       0.53      0.07      0.13       470
+       updat       0.60      0.66      0.63       541
+        auto       1.00      0.42      0.59        19
+       write       0.71      0.66      0.69       498
+    determin       0.09      0.01      0.01       388
+        read       0.71      0.57      0.63       380
+       handl       0.54      0.21      0.30       240
+          to       0.00      0.00      0.00       359
+          if       0.00      0.00      0.00       245
+      insert       0.68      0.55      0.61       183
+     descrpt       0.00      0.00      0.00         0
+         use       0.00      0.00      0.00       342
+        load       0.65      0.65      0.65       333
+       delet       0.66      0.80      0.72       289
+     convert       0.53      0.35      0.42       340
+       start       0.60      0.46      0.52       300
+       clear       0.62      0.70      0.66       306
+       print       0.77      0.51      0.61       400
+        find       0.48      0.47      0.48       388
+       reset       0.66      0.73      0.69       287
+        save       0.65      0.79      0.71       222
+        send       0.63      0.61      0.62       273
+       gener       0.62      0.33      0.43       212
+       close       0.71      0.85      0.77       316
+      compar       0.52      0.74      0.61       211
+       indic       0.00      0.00      0.00       186
+     perform       0.52      0.07      0.12       242
+       chang       0.66      0.22      0.33       348
+        show       0.53      0.30      0.38       271
+       other       0.66      0.60      0.63     21480
+
+   micro avg       0.62      0.62      0.62     73605
+   macro avg       0.54      0.46      0.47     73605
+weighted avg       0.61      0.62      0.61     73605
+

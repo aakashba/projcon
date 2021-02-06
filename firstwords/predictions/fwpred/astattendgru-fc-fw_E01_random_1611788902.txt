@@ -1,0 +1,148 @@
+loading tokenizers... done, 0.14 seconds.
+loading firstwords...done, 0.34 seconds.
+loading sequences... done, 61.52 seconds.
+no
+False
+loading config... done, 0.01 seconds.
+loading model... __________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_2 (InputLayer)            (None, 10, 25)       0                                            
+__________________________________________________________________________________________________
+input_1 (InputLayer)            (None, 25)           0                                            
+__________________________________________________________________________________________________
+input_3 (InputLayer)            (None, 100)          0                                            
+__________________________________________________________________________________________________
+time_distributed_1 (TimeDistrib (None, 10, 25, 100)  7500000     input_2[0][0]                    
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         (None, 25, 100)      7500000     input_1[0][0]                    
+__________________________________________________________________________________________________
+embedding_2 (Embedding)         (None, 100, 100)     13200       input_3[0][0]                    
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, 10, 100)      60600       time_distributed_1[0][0]         
+__________________________________________________________________________________________________
+cu_dnngru_1 (CuDNNGRU)          [(None, 25, 100), (N 60600       embedding_1[0][0]                
+__________________________________________________________________________________________________
+cu_dnngru_2 (CuDNNGRU)          [(None, 100, 100), ( 60600       embedding_2[0][0]                
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 135, 100)     0           time_distributed_2[0][0]         
+                                                                 cu_dnngru_1[0][0]                
+                                                                 cu_dnngru_2[0][0]                
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 13500)        0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 11)           148511      flatten_1[0][0]                  
+==================================================================================================
+Total params: 15,343,511
+Trainable params: 15,343,511
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+done, 6.62 seconds.
+computing predictions...
+1000 processed, 987.6891178848961 per second this batch
+2000 processed, 7366.37468150883 per second this batch
+3000 processed, 7393.876394500185 per second this batch
+4000 processed, 7370.255043678267 per second this batch
+5000 processed, 6624.484028055908 per second this batch
+6000 processed, 6589.292948485763 per second this batch
+7000 processed, 6633.740053708542 per second this batch
+8000 processed, 6590.000924297102 per second this batch
+9000 processed, 6677.405581929722 per second this batch
+10000 processed, 6854.980945051931 per second this batch
+11000 processed, 6631.136902527362 per second this batch
+12000 processed, 6561.377639512261 per second this batch
+13000 processed, 6552.097304636724 per second this batch
+14000 processed, 6564.651414760633 per second this batch
+15000 processed, 6538.203948267665 per second this batch
+16000 processed, 6595.082802641732 per second this batch
+17000 processed, 6474.732292472541 per second this batch
+18000 processed, 6531.928015111383 per second this batch
+19000 processed, 6583.58771492173 per second this batch
+20000 processed, 6604.391830695348 per second this batch
+21000 processed, 6563.016724709522 per second this batch
+22000 processed, 6537.296275447406 per second this batch
+23000 processed, 6583.7798195011555 per second this batch
+24000 processed, 6638.105113025431 per second this batch
+25000 processed, 6530.7333272698 per second this batch
+26000 processed, 6573.686905328882 per second this batch
+27000 processed, 6494.243126241771 per second this batch
+28000 processed, 6566.3633650334805 per second this batch
+29000 processed, 6606.842544299001 per second this batch
+30000 processed, 6568.060591896532 per second this batch
+31000 processed, 6718.152030904069 per second this batch
+32000 processed, 6560.015465976625 per second this batch
+33000 processed, 6437.564724896649 per second this batch
+34000 processed, 6605.385336351175 per second this batch
+35000 processed, 6469.722993522175 per second this batch
+36000 processed, 6288.9727247585915 per second this batch
+37000 processed, 6658.067328824477 per second this batch
+38000 processed, 6560.57241354558 per second this batch
+39000 processed, 6536.678453211805 per second this batch
+40000 processed, 6514.263559860133 per second this batch
+41000 processed, 6525.784762435064 per second this batch
+42000 processed, 6583.651864067372 per second this batch
+43000 processed, 6493.056406646946 per second this batch
+44000 processed, 6462.170672699293 per second this batch
+45000 processed, 6486.684439048558 per second this batch
+46000 processed, 6457.783210820095 per second this batch
+47000 processed, 6484.231894493756 per second this batch
+48000 processed, 6574.435402644798 per second this batch
+49000 processed, 6477.9349260124045 per second this batch
+50000 processed, 6493.549038989584 per second this batch
+51000 processed, 6455.047988253469 per second this batch
+52000 processed, 6526.647793814333 per second this batch
+53000 processed, 6583.138792301265 per second this batch
+54000 processed, 6538.758010783788 per second this batch
+55000 processed, 6552.3896709105065 per second this batch
+56000 processed, 6536.055450589444 per second this batch
+57000 processed, 6555.081653024823 per second this batch
+58000 processed, 6500.738903228698 per second this batch
+59000 processed, 6464.576673262576 per second this batch
+60000 processed, 6549.839665567785 per second this batch
+61000 processed, 6525.239325522202 per second this batch
+62000 processed, 6457.000749508012 per second this batch
+63000 processed, 6568.669604485909 per second this batch
+64000 processed, 6457.642716692431 per second this batch
+65000 processed, 6539.366005729844 per second this batch
+66000 processed, 6575.268505724542 per second this batch
+67000 processed, 6597.0070224166575 per second this batch
+68000 processed, 6493.479887156569 per second this batch
+69000 processed, 6507.495030167867 per second this batch
+70000 processed, 6580.6850155878565 per second this batch
+71000 processed, 6521.824764761542 per second this batch
+72000 processed, 6531.42702576038 per second this batch
+73000 processed, 6483.732519437553 per second this batch
+74000 processed, 8781.36887192763 per second this batch
+done, 12.07 seconds.
+          return     set     get     add   creat   initi    test   remov   check      is   other
+  return    7171      26    1629       5      80      11       1       6     119       0    1973
+     set      14   10286      10      38      11      15       2       2       0       0     661
+     get    4901      20    2860       4      12      13       2       2      10       0     874
+     add       2      41       3    2869      17       2      10       2       0       0     377
+   creat      95      19      12      37    1025      14      18       0       2       0     481
+   initi      12      16      11       2      28    1600       0       0       0       0     228
+    test      58       2       2       1       2       2    1149       0      31       1     258
+   remov       7       1       1       1       0       2       3    1158       0       0     328
+   check     294       8       6       1       3       0      67       2     352       0     733
+      is     114      37      13      13      21       8       4       5      20       0     399
+   other    3235    2090     734     482     671     214     704     170     224       0   22293
+
+              precision    recall  f1-score   support
+
+      return       0.45      0.65      0.53     11021
+         set       0.82      0.93      0.87     11039
+         get       0.54      0.33      0.41      8698
+         add       0.83      0.86      0.85      3323
+       creat       0.55      0.60      0.57      1703
+       initi       0.85      0.84      0.85      1897
+        test       0.59      0.76      0.66      1506
+       remov       0.86      0.77      0.81      1501
+       check       0.46      0.24      0.32      1466
+          is       0.00      0.00      0.00       634
+       other       0.78      0.72      0.75     30817
+
+    accuracy                           0.69     73605
+   macro avg       0.61      0.61      0.60     73605
+weighted avg       0.69      0.69      0.68     73605
+

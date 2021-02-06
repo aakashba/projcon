@@ -1,0 +1,84 @@
+loading tokenizers... done, 0.06 seconds.
+loading firstwords...done, 0.06 seconds.
+loading sequences... done, 53.99 seconds.
+no
+False
+loading config... done, 0.03 seconds.
+loading model... __________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 25)           0                                            
+__________________________________________________________________________________________________
+input_2 (InputLayer)            (None, 100)          0                                            
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         multiple             7500000     input_1[0][0]                    
+                                                                 input_2[0][0]                    
+__________________________________________________________________________________________________
+input_3 (InputLayer)            (None, 100, 100)     0                                            
+__________________________________________________________________________________________________
+our_custom_graph_layer_1 (OurCu (None, 100, 100)     0           embedding_1[1][0]                
+                                                                 input_3[0][0]                    
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 100, 200)     0           our_custom_graph_layer_1[0][0]   
+                                                                 embedding_1[1][0]                
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 100, 100)     20100       concatenate_1[0][0]              
+__________________________________________________________________________________________________
+our_custom_graph_layer_2 (OurCu (None, 100, 100)     0           dense_1[0][0]                    
+                                                                 input_3[0][0]                    
+__________________________________________________________________________________________________
+concatenate_2 (Concatenate)     (None, 100, 200)     0           our_custom_graph_layer_2[0][0]   
+                                                                 dense_1[0][0]                    
+__________________________________________________________________________________________________
+cu_dnngru_1 (CuDNNGRU)          [(None, 25, 100), (N 60600       embedding_1[0][0]                
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 100, 100)     20100       concatenate_2[0][0]              
+__________________________________________________________________________________________________
+concatenate_3 (Concatenate)     (None, 125, 100)     0           cu_dnngru_1[0][0]                
+                                                                 dense_2[0][0]                    
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 12500)        0           concatenate_3[0][0]              
+__________________________________________________________________________________________________
+dense_3 (Dense)                 (None, 2)            25002       flatten_1[0][0]                  
+==================================================================================================
+Total params: 7,625,802
+Trainable params: 7,625,802
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+done, 3.96 seconds.
+computing predictions...
+1000 processed, 898.9079199844118 per second this batch
+2000 processed, 2472.4357109241073 per second this batch
+3000 processed, 2515.3264559878135 per second this batch
+4000 processed, 2475.0274183766733 per second this batch
+5000 processed, 2575.8684040596936 per second this batch
+6000 processed, 2500.647236477657 per second this batch
+7000 processed, 2465.731460916624 per second this batch
+8000 processed, 2504.0400682483737 per second this batch
+9000 processed, 2477.087547059431 per second this batch
+10000 processed, 2457.110594042114 per second this batch
+11000 processed, 2430.4183442112167 per second this batch
+12000 processed, 2467.9724919645155 per second this batch
+13000 processed, 2519.9219171694563 per second this batch
+14000 processed, 2466.0721736714036 per second this batch
+15000 processed, 2474.159825494491 per second this batch
+16000 processed, 2504.0694570816904 per second this batch
+17000 processed, 2453.4741083174326 per second this batch
+18000 processed, 2571.2717773059385 per second this batch
+19000 processed, 2433.203964879682 per second this batch
+20000 processed, 3608.940569400989 per second this batch
+done, 8.63 seconds.
+             get     set
+     get    8371      74
+     set      79   11177
+
+              precision    recall  f1-score   support
+
+         get       0.99      0.99      0.99      8445
+         set       0.99      0.99      0.99     11256
+
+    accuracy                           0.99     19701
+   macro avg       0.99      0.99      0.99     19701
+weighted avg       0.99      0.99      0.99     19701
+

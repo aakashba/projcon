@@ -1,0 +1,71 @@
+loading tokenizers... done, 0.06 seconds.
+loading firstwords...done, 0.06 seconds.
+loading sequences... done, 12.6 seconds.
+no
+False
+loading config... done, 0.03 seconds.
+loading model... __________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_2 (InputLayer)            (None, 10, 10, 25)   0                                            
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, 10, 10, 25, 1 7500000     input_2[0][0]                    
+__________________________________________________________________________________________________
+input_1 (InputLayer)            (None, 25)           0                                            
+__________________________________________________________________________________________________
+time_distributed_4 (TimeDistrib (None, 10, 10, 100)  60600       time_distributed_2[0][0]         
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         (None, 25, 100)      7500000     input_1[0][0]                    
+__________________________________________________________________________________________________
+time_distributed_5 (TimeDistrib (None, 10, 100)      60600       time_distributed_4[0][0]         
+__________________________________________________________________________________________________
+cu_dnngru_1 (CuDNNGRU)          [(None, 25, 100), (N 60600       embedding_1[0][0]                
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 35, 100)      0           time_distributed_5[0][0]         
+                                                                 cu_dnngru_1[0][0]                
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 3500)         0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 2)            7002        flatten_1[0][0]                  
+==================================================================================================
+Total params: 15,188,802
+Trainable params: 15,188,802
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+done, 5.19 seconds.
+computing predictions...
+1000 processed, 839.8793233778691 per second this batch
+2000 processed, 2022.3240962179568 per second this batch
+3000 processed, 2013.9250879082358 per second this batch
+4000 processed, 2013.065042058469 per second this batch
+5000 processed, 2008.0774959596126 per second this batch
+6000 processed, 1998.9721565278849 per second this batch
+7000 processed, 1974.632847569816 per second this batch
+8000 processed, 1982.3351065854351 per second this batch
+9000 processed, 2006.0868726332224 per second this batch
+10000 processed, 1951.853329569156 per second this batch
+11000 processed, 1993.3082212100041 per second this batch
+12000 processed, 1986.3484708402104 per second this batch
+13000 processed, 1972.9587811811416 per second this batch
+14000 processed, 2020.5240344396527 per second this batch
+15000 processed, 1957.5338515442697 per second this batch
+16000 processed, 1965.8526015541354 per second this batch
+17000 processed, 1966.4066330558958 per second this batch
+18000 processed, 2016.327233869387 per second this batch
+19000 processed, 1974.0846277582746 per second this batch
+20000 processed, 2850.9672624627133 per second this batch
+done, 10.59 seconds.
+             get     set
+     get    8359      86
+     set      72   11184
+
+              precision    recall  f1-score   support
+
+         get       0.99      0.99      0.99      8445
+         set       0.99      0.99      0.99     11256
+
+    accuracy                           0.99     19701
+   macro avg       0.99      0.99      0.99     19701
+weighted avg       0.99      0.99      0.99     19701
+

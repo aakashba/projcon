@@ -1,0 +1,76 @@
+loading tokenizers... done, 0.06 seconds.
+loading firstwords...done, 0.06 seconds.
+loading sequences... done, 12.64 seconds.
+no
+False
+loading config... done, 0.03 seconds.
+loading model... __________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_2 (InputLayer)            (None, 10, 25)       0                                            
+__________________________________________________________________________________________________
+input_1 (InputLayer)            (None, 25)           0                                            
+__________________________________________________________________________________________________
+input_3 (InputLayer)            (None, 100)          0                                            
+__________________________________________________________________________________________________
+time_distributed_1 (TimeDistrib (None, 10, 25, 100)  7500000     input_2[0][0]                    
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         (None, 25, 100)      7500000     input_1[0][0]                    
+__________________________________________________________________________________________________
+embedding_2 (Embedding)         (None, 100, 100)     11800       input_3[0][0]                    
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, 10, 100)      60600       time_distributed_1[0][0]         
+__________________________________________________________________________________________________
+cu_dnngru_1 (CuDNNGRU)          [(None, 25, 100), (N 60600       embedding_1[0][0]                
+__________________________________________________________________________________________________
+cu_dnngru_2 (CuDNNGRU)          [(None, 100, 100), ( 60600       embedding_2[0][0]                
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 135, 100)     0           time_distributed_2[0][0]         
+                                                                 cu_dnngru_1[0][0]                
+                                                                 cu_dnngru_2[0][0]                
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 13500)        0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 2)            27002       flatten_1[0][0]                  
+==================================================================================================
+Total params: 15,220,602
+Trainable params: 15,220,602
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+done, 5.0 seconds.
+computing predictions...
+1000 processed, 1277.3844185266585 per second this batch
+2000 processed, 12779.885726628632 per second this batch
+3000 processed, 12902.175636845912 per second this batch
+4000 processed, 12215.852248770578 per second this batch
+5000 processed, 11980.49143287293 per second this batch
+6000 processed, 12954.450706597525 per second this batch
+7000 processed, 12813.812668469822 per second this batch
+8000 processed, 12582.947106913949 per second this batch
+9000 processed, 12498.407065890158 per second this batch
+10000 processed, 12432.732387499429 per second this batch
+11000 processed, 12516.853790732826 per second this batch
+12000 processed, 12405.966344139222 per second this batch
+13000 processed, 12435.181761369095 per second this batch
+14000 processed, 12612.443087091826 per second this batch
+15000 processed, 12446.969679636368 per second this batch
+16000 processed, 12741.152932509698 per second this batch
+17000 processed, 12714.90786117746 per second this batch
+18000 processed, 12639.405042812581 per second this batch
+19000 processed, 12530.95004771812 per second this batch
+20000 processed, 16768.934242600935 per second this batch
+done, 2.28 seconds.
+             get     set
+     get    8363      82
+     set      75   11181
+
+              precision    recall  f1-score   support
+
+         get       0.99      0.99      0.99      8445
+         set       0.99      0.99      0.99     11256
+
+    accuracy                           0.99     19701
+   macro avg       0.99      0.99      0.99     19701
+weighted avg       0.99      0.99      0.99     19701
+

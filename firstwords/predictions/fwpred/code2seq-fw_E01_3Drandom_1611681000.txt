@@ -1,0 +1,436 @@
+loading tokenizers... done, 0.11 seconds.
+loading firstwords...done, 0.26 seconds.
+loading sequences... done, 88.24 seconds.
+no
+False
+loading config... done, 0.02 seconds.
+loading model... __________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 25)           0                                            
+__________________________________________________________________________________________________
+input_2 (InputLayer)            (None, 100, 8)       0                                            
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         (None, 25, 100)      7500000     input_1[0][0]                    
+__________________________________________________________________________________________________
+time_distributed_1 (TimeDistrib (None, 100, 8, 100)  7500000     input_2[0][0]                    
+__________________________________________________________________________________________________
+cu_dnngru_1 (CuDNNGRU)          [(None, 25, 100), (N 60600       embedding_1[0][0]                
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, 100, 100)     60600       time_distributed_1[0][0]         
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 125, 100)     0           cu_dnngru_1[0][0]                
+                                                                 time_distributed_2[0][0]         
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 12500)        0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 11)           137511      flatten_1[0][0]                  
+==================================================================================================
+Total params: 15,258,711
+Trainable params: 15,258,711
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+done, 7.15 seconds.
+computing predictions...
+200 processed, 72.21147589027404 per second this batch
+400 processed, 123.81817487466672 per second this batch
+600 processed, 175.90488041416398 per second this batch
+800 processed, 146.096498747787 per second this batch
+1000 processed, 119.78810144033991 per second this batch
+1200 processed, 142.21934336143744 per second this batch
+1400 processed, 145.46189650727965 per second this batch
+1600 processed, 104.53311802355292 per second this batch
+1800 processed, 147.7304906498738 per second this batch
+2000 processed, 201.80877863387892 per second this batch
+2200 processed, 109.17954489326195 per second this batch
+2400 processed, 177.97665832483096 per second this batch
+2600 processed, 109.17767903612857 per second this batch
+2800 processed, 126.25740890290142 per second this batch
+3000 processed, 144.6449996106915 per second this batch
+3200 processed, 127.15510917417711 per second this batch
+3400 processed, 112.8911337813549 per second this batch
+3600 processed, 134.5784654926415 per second this batch
+3800 processed, 214.56785015507165 per second this batch
+4000 processed, 188.5605782320936 per second this batch
+4200 processed, 153.64031989513225 per second this batch
+4400 processed, 180.78983016822568 per second this batch
+4600 processed, 109.57000149768409 per second this batch
+4800 processed, 157.59810932199915 per second this batch
+5000 processed, 183.11026940475122 per second this batch
+5200 processed, 313.244936665184 per second this batch
+5400 processed, 171.31980774891255 per second this batch
+5600 processed, 173.34470150667914 per second this batch
+5800 processed, 180.26776155599566 per second this batch
+6000 processed, 162.5696354829897 per second this batch
+6200 processed, 125.80167127928817 per second this batch
+6400 processed, 127.20268236491889 per second this batch
+6600 processed, 127.06441284826407 per second this batch
+6800 processed, 138.98889266741637 per second this batch
+7000 processed, 146.8147288517912 per second this batch
+7200 processed, 151.49717209768528 per second this batch
+7400 processed, 159.9076830242181 per second this batch
+7600 processed, 337.32147923903767 per second this batch
+7800 processed, 286.6981905887507 per second this batch
+8000 processed, 120.80317057707342 per second this batch
+8200 processed, 61.47932920241963 per second this batch
+8400 processed, 118.41362249420145 per second this batch
+8600 processed, 94.42974497896942 per second this batch
+8800 processed, 115.8548166731656 per second this batch
+9000 processed, 148.35609500915214 per second this batch
+9200 processed, 163.73160251387952 per second this batch
+9400 processed, 139.816056218194 per second this batch
+9600 processed, 211.33666466813975 per second this batch
+9800 processed, 156.68442109361757 per second this batch
+10000 processed, 112.1563979675349 per second this batch
+10200 processed, 112.1650359861603 per second this batch
+10400 processed, 114.04489527391276 per second this batch
+10600 processed, 152.87791005735872 per second this batch
+10800 processed, 110.30100393173657 per second this batch
+11000 processed, 147.63693147448154 per second this batch
+11200 processed, 161.00488783672336 per second this batch
+11400 processed, 145.9218843050329 per second this batch
+11600 processed, 138.0076406958477 per second this batch
+11800 processed, 147.0181735597087 per second this batch
+12000 processed, 142.6123469210157 per second this batch
+12200 processed, 154.27825918736417 per second this batch
+12400 processed, 146.49083448813556 per second this batch
+12600 processed, 108.18667193338005 per second this batch
+12800 processed, 145.09453025217877 per second this batch
+13000 processed, 149.0653958876443 per second this batch
+13200 processed, 121.98002829503794 per second this batch
+13400 processed, 121.03551645557135 per second this batch
+13600 processed, 103.1005379283561 per second this batch
+13800 processed, 134.8626208233843 per second this batch
+14000 processed, 157.54335710016647 per second this batch
+14200 processed, 99.44952948772666 per second this batch
+14400 processed, 115.5639647131704 per second this batch
+14600 processed, 175.27439558396702 per second this batch
+14800 processed, 152.18613450349693 per second this batch
+15000 processed, 109.40612179857966 per second this batch
+15200 processed, 108.94964923861357 per second this batch
+15400 processed, 99.78284531951454 per second this batch
+15600 processed, 239.65675481077102 per second this batch
+15800 processed, 107.9042774855552 per second this batch
+16000 processed, 213.07431152729868 per second this batch
+16200 processed, 202.02963727070602 per second this batch
+16400 processed, 108.61444927567666 per second this batch
+16600 processed, 123.64502484303104 per second this batch
+16800 processed, 81.3312391623902 per second this batch
+17000 processed, 94.17522842589374 per second this batch
+17200 processed, 137.5632684953242 per second this batch
+17400 processed, 192.26588504242895 per second this batch
+17600 processed, 148.72730015588706 per second this batch
+17800 processed, 114.85099510186859 per second this batch
+18000 processed, 117.81811727096807 per second this batch
+18200 processed, 104.5435722423039 per second this batch
+18400 processed, 147.30708144390957 per second this batch
+18600 processed, 204.94520052859562 per second this batch
+18800 processed, 191.53382253028698 per second this batch
+19000 processed, 218.9288084265456 per second this batch
+19200 processed, 146.93686134724047 per second this batch
+19400 processed, 257.97653054487546 per second this batch
+19600 processed, 152.7675017543018 per second this batch
+19800 processed, 132.81505122706255 per second this batch
+20000 processed, 106.58331999009197 per second this batch
+20200 processed, 158.0117368686054 per second this batch
+20400 processed, 122.28007040151432 per second this batch
+20600 processed, 109.47794558047808 per second this batch
+20800 processed, 115.28872847700347 per second this batch
+21000 processed, 182.40539497210239 per second this batch
+21200 processed, 123.92196071002708 per second this batch
+21400 processed, 86.7640366213186 per second this batch
+21600 processed, 125.90879434731615 per second this batch
+21800 processed, 129.14679849071533 per second this batch
+22000 processed, 105.24359450077718 per second this batch
+22200 processed, 94.68696644934897 per second this batch
+22400 processed, 102.95167504389028 per second this batch
+22600 processed, 115.85724301374641 per second this batch
+22800 processed, 158.35158600275614 per second this batch
+23000 processed, 84.76397646471176 per second this batch
+23200 processed, 170.31821546754222 per second this batch
+23400 processed, 143.10707893888963 per second this batch
+23600 processed, 97.06853894571245 per second this batch
+23800 processed, 138.8953381624138 per second this batch
+24000 processed, 95.06312099192266 per second this batch
+24200 processed, 95.23225548140316 per second this batch
+24400 processed, 122.58683665528476 per second this batch
+24600 processed, 108.05099997931694 per second this batch
+24800 processed, 174.62750088814718 per second this batch
+25000 processed, 147.31029446076573 per second this batch
+25200 processed, 134.99164251105623 per second this batch
+25400 processed, 165.66431622402223 per second this batch
+25600 processed, 173.34698719043917 per second this batch
+25800 processed, 130.34389948662357 per second this batch
+26000 processed, 68.66755812917732 per second this batch
+26200 processed, 142.4119573297661 per second this batch
+26400 processed, 147.59808396584972 per second this batch
+26600 processed, 186.93799128472517 per second this batch
+26800 processed, 180.112236819998 per second this batch
+27000 processed, 157.33773412463546 per second this batch
+27200 processed, 130.4242279795307 per second this batch
+27400 processed, 140.34981207762118 per second this batch
+27600 processed, 164.65624888295505 per second this batch
+27800 processed, 208.16875618797852 per second this batch
+28000 processed, 138.13483602056962 per second this batch
+28200 processed, 168.66296676754502 per second this batch
+28400 processed, 127.97668622343706 per second this batch
+28600 processed, 150.95514076173922 per second this batch
+28800 processed, 114.91977549925818 per second this batch
+29000 processed, 163.18050262229758 per second this batch
+29200 processed, 139.1564325829727 per second this batch
+29400 processed, 143.53661120940586 per second this batch
+29600 processed, 121.3107893114042 per second this batch
+29800 processed, 94.96771388670989 per second this batch
+30000 processed, 139.2022919347351 per second this batch
+30200 processed, 164.65128039300234 per second this batch
+30400 processed, 133.25275171447524 per second this batch
+30600 processed, 140.60086021367758 per second this batch
+30800 processed, 156.04670353610024 per second this batch
+31000 processed, 144.58908382469153 per second this batch
+31200 processed, 164.07296829322092 per second this batch
+31400 processed, 157.66045474067468 per second this batch
+31600 processed, 165.0120506125373 per second this batch
+31800 processed, 195.21325739495856 per second this batch
+32000 processed, 130.9951278310698 per second this batch
+32200 processed, 115.7842142471455 per second this batch
+32400 processed, 88.63210336572436 per second this batch
+32600 processed, 131.62695285869856 per second this batch
+32800 processed, 130.7815901557622 per second this batch
+33000 processed, 137.21934157813223 per second this batch
+33200 processed, 162.0672541375036 per second this batch
+33400 processed, 177.87061064492536 per second this batch
+33600 processed, 120.57635548243353 per second this batch
+33800 processed, 97.65638476136596 per second this batch
+34000 processed, 70.01679925611708 per second this batch
+34200 processed, 155.45268190999616 per second this batch
+34400 processed, 160.6329549415685 per second this batch
+34600 processed, 104.74139377078829 per second this batch
+34800 processed, 231.78144374543223 per second this batch
+35000 processed, 132.50872332547235 per second this batch
+35200 processed, 169.34790427833448 per second this batch
+35400 processed, 135.7447833407191 per second this batch
+35600 processed, 140.19236224144942 per second this batch
+35800 processed, 132.77755541532792 per second this batch
+36000 processed, 169.46211578638085 per second this batch
+36200 processed, 130.59465977968776 per second this batch
+36400 processed, 146.48880366156556 per second this batch
+36600 processed, 157.67494721661544 per second this batch
+36800 processed, 97.92144248795472 per second this batch
+37000 processed, 106.3751846915747 per second this batch
+37200 processed, 140.69759808928129 per second this batch
+37400 processed, 130.9955670768659 per second this batch
+37600 processed, 159.57550710415245 per second this batch
+37800 processed, 141.10312122027403 per second this batch
+38000 processed, 146.01386024157674 per second this batch
+38200 processed, 151.26215632770368 per second this batch
+38400 processed, 147.39325146592472 per second this batch
+38600 processed, 179.75170041862492 per second this batch
+38800 processed, 122.53662814891818 per second this batch
+39000 processed, 112.7266968983615 per second this batch
+39200 processed, 138.28036431074213 per second this batch
+39400 processed, 113.43493131921635 per second this batch
+39600 processed, 188.1581207196823 per second this batch
+39800 processed, 112.576200277977 per second this batch
+40000 processed, 121.15218460955607 per second this batch
+40200 processed, 209.96980807696283 per second this batch
+40400 processed, 160.9385533663094 per second this batch
+40600 processed, 136.3674145476697 per second this batch
+40800 processed, 157.5533722275154 per second this batch
+41000 processed, 143.54014223786075 per second this batch
+41200 processed, 121.99442831893685 per second this batch
+41400 processed, 150.69654208913104 per second this batch
+41600 processed, 146.24303840211533 per second this batch
+41800 processed, 110.1680517386025 per second this batch
+42000 processed, 134.64224532208917 per second this batch
+42200 processed, 147.16097129806684 per second this batch
+42400 processed, 102.2810994022135 per second this batch
+42600 processed, 61.520456770607616 per second this batch
+42800 processed, 121.42659589792741 per second this batch
+43000 processed, 119.63340629143732 per second this batch
+43200 processed, 128.23129503264343 per second this batch
+43400 processed, 112.14041040025438 per second this batch
+43600 processed, 108.2894910388599 per second this batch
+43800 processed, 99.03368735914898 per second this batch
+44000 processed, 165.3575828670388 per second this batch
+44200 processed, 160.60331064987807 per second this batch
+44400 processed, 105.42803107734106 per second this batch
+44600 processed, 143.7690234310654 per second this batch
+44800 processed, 204.58380424803084 per second this batch
+45000 processed, 138.14484054081453 per second this batch
+45200 processed, 183.32865479596833 per second this batch
+45400 processed, 180.71313777710466 per second this batch
+45600 processed, 179.6844119278177 per second this batch
+45800 processed, 196.00399635066347 per second this batch
+46000 processed, 253.9653710524116 per second this batch
+46200 processed, 165.79395023621987 per second this batch
+46400 processed, 183.74825542644604 per second this batch
+46600 processed, 167.31956814982266 per second this batch
+46800 processed, 180.57545765913807 per second this batch
+47000 processed, 169.48069421636117 per second this batch
+47200 processed, 179.7109077946421 per second this batch
+47400 processed, 178.99292049978445 per second this batch
+47600 processed, 129.68787864827215 per second this batch
+47800 processed, 138.17487577865046 per second this batch
+48000 processed, 126.7697603870121 per second this batch
+48200 processed, 181.63581329038342 per second this batch
+48400 processed, 125.86032335527969 per second this batch
+48600 processed, 116.37904145678574 per second this batch
+48800 processed, 122.61153007550473 per second this batch
+49000 processed, 123.69100758272026 per second this batch
+49200 processed, 144.87239617400846 per second this batch
+49400 processed, 169.02259017853197 per second this batch
+49600 processed, 148.10402466727416 per second this batch
+49800 processed, 146.8571628265475 per second this batch
+50000 processed, 126.0377602990235 per second this batch
+50200 processed, 220.0277103420298 per second this batch
+50400 processed, 318.3968700052037 per second this batch
+50600 processed, 288.0098437860399 per second this batch
+50800 processed, 279.6757804882877 per second this batch
+51000 processed, 133.17284338345203 per second this batch
+51200 processed, 193.89397115065796 per second this batch
+51400 processed, 154.93491817399362 per second this batch
+51600 processed, 158.58151806807317 per second this batch
+51800 processed, 149.32338867083772 per second this batch
+52000 processed, 148.34427333533873 per second this batch
+52200 processed, 145.34367219329354 per second this batch
+52400 processed, 93.60013168084967 per second this batch
+52600 processed, 123.03755914953946 per second this batch
+52800 processed, 107.9088883149315 per second this batch
+53000 processed, 126.37026167322433 per second this batch
+53200 processed, 220.32366347657393 per second this batch
+53400 processed, 207.2692531916026 per second this batch
+53600 processed, 183.70501979350047 per second this batch
+53800 processed, 211.24688224033298 per second this batch
+54000 processed, 178.83154418262845 per second this batch
+54200 processed, 127.79213156342671 per second this batch
+54400 processed, 118.76464406863836 per second this batch
+54600 processed, 120.59539909690402 per second this batch
+54800 processed, 160.61389592003127 per second this batch
+55000 processed, 166.21698197384583 per second this batch
+55200 processed, 127.46428673968892 per second this batch
+55400 processed, 162.94255254459125 per second this batch
+55600 processed, 164.67793089468177 per second this batch
+55800 processed, 137.23487445447205 per second this batch
+56000 processed, 98.57446621862069 per second this batch
+56200 processed, 139.4383022181984 per second this batch
+56400 processed, 196.0854277273862 per second this batch
+56600 processed, 214.8120335830698 per second this batch
+56800 processed, 109.54341159060154 per second this batch
+57000 processed, 196.6820542627362 per second this batch
+57200 processed, 138.8722466864747 per second this batch
+57400 processed, 147.0593595494006 per second this batch
+57600 processed, 130.038973379764 per second this batch
+57800 processed, 213.0327982545895 per second this batch
+58000 processed, 150.38116204178246 per second this batch
+58200 processed, 175.78092977289901 per second this batch
+58400 processed, 134.55397122591384 per second this batch
+58600 processed, 125.1068492284453 per second this batch
+58800 processed, 142.07501609766848 per second this batch
+59000 processed, 119.1657565089592 per second this batch
+59200 processed, 134.20280263530492 per second this batch
+59400 processed, 130.63249906019163 per second this batch
+59600 processed, 196.50482069662837 per second this batch
+59800 processed, 159.4304229749614 per second this batch
+60000 processed, 129.29790793506905 per second this batch
+60200 processed, 184.0786733570918 per second this batch
+60400 processed, 192.73772853636208 per second this batch
+60600 processed, 246.06242895759786 per second this batch
+60800 processed, 245.50464684673602 per second this batch
+61000 processed, 169.22886101421275 per second this batch
+61200 processed, 158.52463425395862 per second this batch
+61400 processed, 138.76003102448504 per second this batch
+61600 processed, 72.73803046906134 per second this batch
+61800 processed, 171.9681942855286 per second this batch
+62000 processed, 144.21836744286213 per second this batch
+62200 processed, 228.13627640188247 per second this batch
+62400 processed, 126.16012590344182 per second this batch
+62600 processed, 82.71314607081348 per second this batch
+62800 processed, 89.99136415341286 per second this batch
+63000 processed, 115.16312385179815 per second this batch
+63200 processed, 133.75885778844597 per second this batch
+63400 processed, 259.5673451166508 per second this batch
+63600 processed, 148.6122205594766 per second this batch
+63800 processed, 149.14960826482562 per second this batch
+64000 processed, 215.2175791530233 per second this batch
+64200 processed, 155.70771223618908 per second this batch
+64400 processed, 134.87064158065857 per second this batch
+64600 processed, 190.26909329715394 per second this batch
+64800 processed, 125.15701623823271 per second this batch
+65000 processed, 128.7471743032482 per second this batch
+65200 processed, 155.16594971142743 per second this batch
+65400 processed, 162.01558415288903 per second this batch
+65600 processed, 210.36706199083932 per second this batch
+65800 processed, 268.2812160985921 per second this batch
+66000 processed, 167.6872794502617 per second this batch
+66200 processed, 117.81547017153522 per second this batch
+66400 processed, 142.48898799725 per second this batch
+66600 processed, 133.27125139852876 per second this batch
+66800 processed, 103.51155848820112 per second this batch
+67000 processed, 110.62936495153554 per second this batch
+67200 processed, 145.80182160255833 per second this batch
+67400 processed, 130.64404792707703 per second this batch
+67600 processed, 225.59698093116572 per second this batch
+67800 processed, 196.49794406089802 per second this batch
+68000 processed, 91.1589085780962 per second this batch
+68200 processed, 144.93007135935935 per second this batch
+68400 processed, 192.00430376162961 per second this batch
+68600 processed, 158.76413396081566 per second this batch
+68800 processed, 196.9500989801238 per second this batch
+69000 processed, 189.52963212101247 per second this batch
+69200 processed, 167.41003169833888 per second this batch
+69400 processed, 191.14842076609673 per second this batch
+69600 processed, 157.78206770465164 per second this batch
+69800 processed, 176.5173804372058 per second this batch
+70000 processed, 111.21653789532893 per second this batch
+70200 processed, 131.69286344867834 per second this batch
+70400 processed, 122.98427055281748 per second this batch
+70600 processed, 159.54709208214152 per second this batch
+70800 processed, 136.23114202964618 per second this batch
+71000 processed, 99.83451258695551 per second this batch
+71200 processed, 66.24573500733703 per second this batch
+71400 processed, 133.3061371430883 per second this batch
+71600 processed, 164.78044802445365 per second this batch
+71800 processed, 260.65049999822185 per second this batch
+72000 processed, 190.5348393947517 per second this batch
+72200 processed, 147.84933636798536 per second this batch
+72400 processed, 121.74495003190063 per second this batch
+72600 processed, 129.496417702315 per second this batch
+72800 processed, 218.62881974626148 per second this batch
+73000 processed, 108.12754719066112 per second this batch
+73200 processed, 102.04201826658124 per second this batch
+73400 processed, 144.91569810743488 per second this batch
+73600 processed, 120.69171623886467 per second this batch
+73800 processed, 1145.5922042761104 per second this batch
+done, 532.22 seconds.
+          return     set     get     add   creat   initi    test   remov   check      is   other
+  return    5734      25    1954      11      75      16       1       6      26       0    3173
+     set      13   10362       9      41      10      25       2       2       0       0     575
+     get    4524      18    2687       8      14      22       3       2       2       0    1418
+     add       3      45       2    2974      12       1       9       3       1       0     273
+   creat      51      23      14      46    1010      21       8       0       2       0     528
+   initi      15      14       7       2      19    1646       0       0       0       0     194
+    test      13       2       2       3       1       2     990       3       6       0     484
+   remov       7       1       0       1       0       1       1    1180       0       0     310
+   check      85       8       6       2       3       2      50       2     220       0    1088
+      is      55      37      10      15      12       9       2       6       3      13     472
+   other    2280    2138     819     528     665     262     505     188     122       1   23309
+
+              precision    recall  f1-score   support
+
+      return       0.45      0.52      0.48     11021
+         set       0.82      0.94      0.87     11039
+         get       0.49      0.31      0.38      8698
+         add       0.82      0.89      0.86      3323
+       creat       0.55      0.59      0.57      1703
+       initi       0.82      0.87      0.84      1897
+        test       0.63      0.66      0.64      1506
+       remov       0.85      0.79      0.82      1501
+       check       0.58      0.15      0.24      1466
+          is       0.93      0.02      0.04       634
+       other       0.73      0.76      0.74     30817
+
+    accuracy                           0.68     73605
+   macro avg       0.70      0.59      0.59     73605
+weighted avg       0.67      0.68      0.67     73605
+

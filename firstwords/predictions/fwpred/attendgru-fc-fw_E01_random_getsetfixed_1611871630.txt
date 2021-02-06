@@ -1,0 +1,69 @@
+loading tokenizers... done, 0.06 seconds.
+loading firstwords...done, 0.06 seconds.
+loading sequences... done, 12.61 seconds.
+no
+False
+loading config... done, 0.01 seconds.
+loading model... __________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_2 (InputLayer)            (None, 10, 25)       0                                            
+__________________________________________________________________________________________________
+input_1 (InputLayer)            (None, 25)           0                                            
+__________________________________________________________________________________________________
+time_distributed_1 (TimeDistrib (None, 10, 25, 100)  7500000     input_2[0][0]                    
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         (None, 25, 100)      7500000     input_1[0][0]                    
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, 10, 100)      60600       time_distributed_1[0][0]         
+__________________________________________________________________________________________________
+cu_dnngru_1 (CuDNNGRU)          [(None, 25, 100), (N 60600       embedding_1[0][0]                
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 35, 100)      0           time_distributed_2[0][0]         
+                                                                 cu_dnngru_1[0][0]                
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 3500)         0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 2)            7002        flatten_1[0][0]                  
+==================================================================================================
+Total params: 15,128,202
+Trainable params: 15,128,202
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+done, 4.32 seconds.
+computing predictions...
+1000 processed, 1358.0133591763504 per second this batch
+2000 processed, 14565.103571934538 per second this batch
+3000 processed, 14579.501242361179 per second this batch
+4000 processed, 14583.278179317469 per second this batch
+5000 processed, 14504.28261876408 per second this batch
+6000 processed, 14350.716472409724 per second this batch
+7000 processed, 14390.09012649081 per second this batch
+8000 processed, 13923.259995328362 per second this batch
+9000 processed, 13392.469657873895 per second this batch
+10000 processed, 14260.12733484262 per second this batch
+11000 processed, 14656.058006737456 per second this batch
+12000 processed, 14360.545248008571 per second this batch
+13000 processed, 14138.00925287248 per second this batch
+14000 processed, 13942.350428584055 per second this batch
+15000 processed, 13107.759963921677 per second this batch
+16000 processed, 14315.456484561446 per second this batch
+17000 processed, 13792.750726788763 per second this batch
+18000 processed, 13774.93744422932 per second this batch
+19000 processed, 14506.36394810315 per second this batch
+20000 processed, 18713.207268576138 per second this batch
+done, 2.06 seconds.
+             get     set
+     get    8359      86
+     set      67   11189
+
+              precision    recall  f1-score   support
+
+         get       0.99      0.99      0.99      8445
+         set       0.99      0.99      0.99     11256
+
+    accuracy                           0.99     19701
+   macro avg       0.99      0.99      0.99     19701
+weighted avg       0.99      0.99      0.99     19701
+
