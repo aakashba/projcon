@@ -1,4 +1,6 @@
-# Guide for replication of results for paper "Project-Level Encoding for Neural Source Code Summarization of Subroutines", currently under peer review
+# Guide for replication of results for paper "Project-Level Encoding for Neural Source Code Summarization of Subroutines", accepted at ICPC 2021, Madrid, Spain (Virtual due to pandemic).
+
+## Arxiv - https://arxiv.org/abs/2103.11599
 ## Step 0 - Dataset building
 We began with the main java dataset of 2.1m methods aswell the complete 50 million method extended set requested from Le Clair et al{http://leclair.tech/data/funcom/}
 
